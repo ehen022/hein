@@ -52,7 +52,7 @@
     },
    
     "tooltip": [
-        {"field": "Entity", "type": "nominal"},
+        {"field": "Continent", "type": "nominal"},
         {"field": "Access to electricity (% of population)", "type": "quantitative", "format": ","},
         {"field": "gdp_growth", "type": "quantitative", "format": ","},
         {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative", "format": ","}
