@@ -1,0 +1,74 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width":500,
+"height":500,
+"data":{
+    "url": "https://raw.githubusercontent.com/HeinTZaw/Energy/main/global-data-on-sustainable-energy.csv"
+},
+"params": [
+    {
+        "name": "Year_selection",
+        "value":0,
+        "bind":{
+            "input": "range",
+            "min": 2000,
+            "max": 2019,
+            "step": 1,
+           
+                "name": "Year selection"
+            
+
+        }
+
+    }
+],
+"transform": [
+    {
+        "filter": "datum.Year> Year_selection"}
+        
+],
+"mark":"circle",
+"encoding": {
+    "x":{
+        "field":"gdp_growth",
+        "type": "quantitative",
+        "title":"GDP_growth",
+        "axis":{"tickCount":10}
+       
+        
+      
+        
+    },
+    "y":{
+        "field":"Value_co2_emissions_kt_by_country",
+        "type": "quantitative",
+        "title":"C0_2 emission",
+        "axis":{"tickCount":10},
+        "scale":{"type": "log"}
+        
+    },
+    "size":{
+        "field":"Access to electricity (% of population)",
+        "type": "quantitative"
+    },
+   
+    "tooltip": [
+        {"field": "Entity", "type": "nominal"},
+        {"field": "Access to electricity (% of population)", "type": "quantitative", "format": ","},
+        {"field": "gdp_growth", "type": "quantitative", "format": ","},
+        {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative", "format": ","}
+      
+        
+        ],
+        "color":{
+            "field":"Entity",
+            "type": "nominal"
+        }
+        
+
+
+   
+    
+   
+}
+
+}
